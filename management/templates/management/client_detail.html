@@ -1,0 +1,28 @@
+{% extends 'management/base.html' %}
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">{{ client.name}}</h1>
+</div>
+
+<table class="table p-3 pb-md-4 mx-auto text-center">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">email</th>
+      <th scope="col">описание</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row">{{ client.id}}</th>
+      <td>{{ client.email}}</td>
+      <td>{{ client.comment }}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="row text-center">
+    <div class="col-12 ">
+                <a class="btn btn-primary" href="{% url 'management:client_list' %}" role="button">Вернуться</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'management/base.html' %}
+{% block content %}
+<div class="row text-center">
+    <div class="col-12 ">
+                <a class="btn btn-primary" href="{% url 'management:message_create' %}" role="button">Создать новое сообщение</a>
+    </div>
+</div>
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal text-body-emphasis">Сообщения</h1>
+      <p class="fs-5 text-body-secondary">Здесь вы можете управлять сообщениями</p>
+    </div>
+<table class="table p-3 pb-md-4 mx-auto text-center">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Тема</th>
+      <th scope="col">управление</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    {% for message in object_list %}
+    <tr>
+      <th scope="row">{{ message.id}}</th>
+      <td>{{ message.message_subject}}</td>
+        <td>
+            <div class="btn-group">
+                        <a class="btn btn-primary" href="{% url 'management:message_detail' message.pk %}" role="button">Перейти</a>
+                        <a class="btn btn-primary" href="{% url 'management:message_update' message.pk %}" role="button">Редактировать</a>
+                        <a class="btn btn-danger" href="{% url 'management:message_delete' message.pk %}" role="button">Удалить</a>
+            </div>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

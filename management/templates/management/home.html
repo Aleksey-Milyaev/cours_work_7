@@ -1,0 +1,61 @@
+{% extends 'management/base.html' %}
+
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal text-body-emphasis">Главная</h1>
+      <p class="fs-5 text-body-secondary">Вы можете управлять: клиентами, сообщениями и рассылками, перейдя в соответсвующую вкладку</p>
+</div>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Клиенты</h4>
+          </div>
+          <div class="card-body">
+
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>нужно сделать количество клиентов</li>
+              <li>описание</li>
+
+            </ul>
+            <a type="button" href="{% url 'management:client_list' %}" class="w-100 btn btn-lg btn-outline-primary" >Перейти</a>
+          </div>
+        </div>
+      </div>
+       <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Сообщения</h4>
+          </div>
+          <div class="card-body">
+
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>10 users included</li>
+              <li>2 GB of storage</li>
+              <li>Email support</li>
+              <li>Help center access</li>
+            </ul>
+            <a type="button" href="{% url 'management:message_list' %}" class="w-100 btn btn-lg btn-outline-primary" >Перейти</a>
+          </div>
+        </div>
+      </div>
+       <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Рассылки</h4>
+          </div>
+          <div class="card-body">
+
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>10 users included</li>
+              <li>2 GB of storage</li>
+              <li>Email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Перейти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

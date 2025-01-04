@@ -1,0 +1,38 @@
+{% extends 'management/base.html' %}
+{% block content %}
+<div class="row text-center">
+    <div class="col-12 ">
+                <a class="btn btn-primary" href="{% url 'management:client_create' %}" role="button">Создать нового клиента</a>
+    </div>
+</div>
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal text-body-emphasis">Клиенты</h1>
+      <p class="fs-5 text-body-secondary">Здесь вы можете управлять клиентами</p>
+    </div>
+<table class="table p-3 pb-md-4 mx-auto text-center">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Ф.И.О.</th>
+      <th scope="col">email</th>
+      <th scope="col">управление</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    {% for client in object_list %}
+    <tr>
+      <th scope="row">{{ client.id}}</th>
+      <td>{{ client.name}}</td>
+      <td>{{ client.email}}</td>
+        <td>
+            <div class="btn-group">
+                        <a class="btn btn-primary" href="{% url 'management:client_detail' client.pk %}" role="button">Перейти</a>
+                        <a class="btn btn-primary" href="{% url 'management:client_update' client.pk %}" role="button">Редактировать</a>
+                        <a class="btn btn-danger" href="{% url 'management:client_delete' client.pk %}" role="button">Удалить</a>
+            </div>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
